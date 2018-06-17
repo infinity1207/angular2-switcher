@@ -2,14 +2,19 @@
   "name": "angular2-switcher",
   "displayName": "angular2-switcher",
   "description": "Easily navigate to component's files in angular2 project.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "infinity1207",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.5.0"
   },
-  "categories": ["Languages", "Other"],
-  "activationEvents": ["*"],
+  "categories": [
+    "Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
@@ -58,8 +63,7 @@
         "angular2-swithcer.openSideBySide": {
           "type": "boolean",
           "default": false,
-          "description":
-            "Open files side by side to Angular Component Typescript file."
+          "description": "Open files side by side to Angular Component Typescript file."
         }
       }
     }
