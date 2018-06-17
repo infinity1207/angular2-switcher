@@ -2,7 +2,7 @@
 
 Easily navigate to `typescript(.ts)`|`template(.html)`|`style(.scss/.sass/.less/.css)` in angular2 project.
 
-See the [CHANGELOG](https://github.com/infinity1207/angular2-switcher/blob/master/CHANGELOG.md) for the latest changes
+See the [CHANGELOG](https://github.com/infinity1207/angular2-switcher/blob/master/ChANGELOG.md) for the latest changes
 
 ---
 

@@ -2,7 +2,7 @@
   "name": "angular2-switcher",
   "displayName": "angular2-switcher",
   "description": "Easily navigate to component's files in angular2 project.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "publisher": "infinity1207",
   "icon": "images/logo.png",
   "engines": {
