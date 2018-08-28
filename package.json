@@ -60,7 +60,7 @@
     "configuration": {
       "title": "Side by side",
       "properties": {
-        "angular2-swithcer.openSideBySide": {
+        "angular2-switcher.openSideBySide": {
           "type": "boolean",
           "default": false,
           "description": "Open files side by side to Angular Component Typescript file."
