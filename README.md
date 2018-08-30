@@ -12,7 +12,7 @@ See the [CHANGELOG](https://github.com/infinity1207/angular2-switcher/blob/maste
 
 * Go to the definition of variables/functions when press `f12` within html.
 
-* Switch `.ts`|`.html`|`.css`|`.spec.ts` fastly.
+* Switch `.ts`|`.html`|`.css`|`.spec.ts` quickly.
 
   * `alt+o`(Windows) `shift+alt+o`(macOS)
 
