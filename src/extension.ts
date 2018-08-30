@@ -101,12 +101,12 @@ function getFileNameWithoutExtension(path: string) {
 }
 
 let isSplit = vscode.workspace
-  .getConfiguration("angular2-swithcer")
+  .getConfiguration("angular2-switcher")
   .get<boolean>("openSideBySide");
 
 vscode.workspace.onDidChangeConfiguration(() => {
   isSplit = vscode.workspace
-    .getConfiguration("angular2-swithcer")
+    .getConfiguration("angular2-switcher")
     .get("openSideBySide");
 });
 
@@ -394,4 +394,4 @@ function* gen(files: string[], viewColumn: vscode.ViewColumn) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
