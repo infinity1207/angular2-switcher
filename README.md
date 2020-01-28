@@ -2,36 +2,37 @@
 
 Easily navigate to `typescript(.ts)`|`template(.html)`|`style(.scss/.sass/.less/.css)` in angular2 project.
 
-See the [CHANGELOG](https://github.com/infinity1207/angular2-switcher/blob/master/ChANGELOG.md) for the latest changes
-
----
+## Support
 
 [![Paypal Donations](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.me/infinity20091207) a :coffee: and you will help me to keep working on this extension :wink:
 
 ## Usage
 
 * Go to the definition of variables/functions when press `f12` within html.
-
 * Switch `.ts`|`.html`|`.css`|`.spec.ts` quickly.
+  >|   |  Windows  |     macOS     |
+  >| - | :-------: | :-----------: |
+  >| If on `.ts`&#124;`.css`&#124;`.spec.ts`:&ensp;go to `.html`<br>If on `.html`:&ensp;go to previous | `alt+o` | `shift+alt+o` |
+  >| If on `.ts`&#124;`.html`&#124;`.spec.ts`:&ensp;go to `.css`<br>If on `.css`:&ensp;go to previous | `alt+i` | `shift+alt+i` |
+  >| If on `.css`&#124;`.html`&#124;`.spec.ts`:&ensp;go to `.ts`<br>If on `ts`:&ensp;go to previous | `alt+u` | `shift+alt+u` |
+  >| If on `.ts`&#124;`.css`&#124;`.html`:&ensp;go to `.spec.ts`<br>If on `.spec.ts`:&ensp;go to previous | `alt+p` | `shift+alt+p` |
 
-  * `alt+o`(Windows) `shift+alt+o`(macOS)
+## Available Settings
 
-    > if on `.ts|.css|.spec.ts`: go to html<br>
-    > if on `.html`: go to previous
+* Open files side by side (`false` by default)
+```json
+  "angular2-switcher.openSideBySide": true
+```
 
-  * `alt+i`(Windows) `shift+alt+i`(macOS)
+* The order of angular2-switcher find corresponding style file  (`[".scss", ".sass", ".less", ".css"]` by default)
+```json
+  "angular2-switcher.styleFormats": [".scss", ".sass", ".less", ".css"]
+```
 
-    > if on `.ts|.html|.spec.ts`: go to css<br>
-    > if on `.css`: go to previous
-
-  * `alt+u`(Windows) `shift+alt+u`(macOS)
-
-    > if on `.css|.html|.spec.ts`: go to ts<br>
-    > if on `ts`: go to previous
-
-  * `alt+p`(Windows) `shift+alt+p`(macOS)
-    > if on `.ts|.css|.html`: go to spec.ts<br>
-    > if on `.spec.ts`: go to previous
+* The order of angular2-switcher find corresponding template file  (`[".html"]` by default)
+```json
+  "angular2-switcher.templateFormats": [".html"]
+```
 
 ## Source
 
