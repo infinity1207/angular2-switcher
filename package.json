@@ -3,7 +3,7 @@
 	"publisher": "infinity1207",
 	"displayName": "angular2-switcher",
 	"description": "Easily navigate to `typescript`|`template`|`style` in angular2 project.",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -29,7 +29,7 @@
 				"title": "Open corresponding style file"
 			},
 			{
-				"command": "extension.switchTS",
+				"command": "extension.switchTs",
 				"title": "Open corresponding typescript file"
 			},
 			{
@@ -49,7 +49,7 @@
 				"mac": "shift+alt+i"
 			},
 			{
-				"command": "extension.switchTS",
+				"command": "extension.switchTs",
 				"key": "alt+u",
 				"mac": "shift+alt+u"
 			},
