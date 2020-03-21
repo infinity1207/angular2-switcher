@@ -4,7 +4,7 @@
 	"icon": "images/logo.png",
 	"displayName": "angular2-switcher",
 	"description": "Easily navigate to `typescript`|`template`|`style` in angular2 project.",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"engines": {
 		"vscode": "^1.41.0"
 	},

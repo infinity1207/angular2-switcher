@@ -153,7 +153,8 @@ async function openCorrespondingFile(fileNameWithoutExtension: string, ...format
 
     for (let index = 0; index < formats.length; index++) {
         const fileName = `${fileNameWithoutExtension}${formats[index]}`;
-        if (openFile(fileName)) {
+        var succ = await openFile(fileName);
+        if (succ) {
             break;
         }
     }
