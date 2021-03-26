@@ -16,6 +16,9 @@ export function getFileNameWithoutExtension(path: string) {
         if (parts[parts.length - 1] === "spec") {
             parts.pop();
         }
+        if (parts[parts.length - 1] === "ng") {
+            parts.pop();
+        }
     }
     return parts.join(".");
 }
