@@ -68,6 +68,11 @@
 						"type": "boolean",
 						"default": false,
 						"description": "Open files side by side."
+					},
+          "reuseView": {
+						"type": "boolean",
+						"default": false,
+						"description": "Reuse opened view"
 					}
 				}
 			},

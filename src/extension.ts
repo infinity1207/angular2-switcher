@@ -4,6 +4,7 @@ import { TemplateDefinitionProvider } from "./template-definition-provider";
 
 let previous = "";
 let openSideBySide = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("openSideBySide")!;
+let reuseView = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("reuseView")!;
 let styleFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("styleFormats")!;
 let templateFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("templateFormats")!;
 
@@ -153,6 +154,11 @@ async function openCorrespondingFile(fileNameWithoutExtension: string, ...format
 
     for (let index = 0; index < formats.length; index++) {
         const fileName = `${fileNameWithoutExtension}${formats[index]}`;
+        const textEditor = vscode.window.visibleTextEditors.find(textDocument => textDocument.document.fileName === fileName);
+        if(reuseView && !!textEditor) {
+          await vscode.window.showTextDocument(textEditor.document, textEditor.viewColumn);
+          break;
+        }
         var succ = await openFile(fileName);
         if (succ) {
             break;
