@@ -4,7 +4,7 @@
 	"icon": "images/logo.png",
 	"displayName": "angular2-switcher",
 	"description": "Easily navigate to `typescript`|`template`|`style` in angular2 project.",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -69,7 +69,7 @@
 						"default": false,
 						"description": "Open files side by side."
 					},
-          "reuseView": {
+					"reuseView": {
 						"type": "boolean",
 						"default": false,
 						"description": "Reuse opened view"
@@ -100,6 +100,16 @@
 							".html"
 						],
 						"description": "The order of angular2-switcher find corresponding template file."
+					}
+				}
+			},
+      {
+				"title": "Reveal if open",
+				"properties": {
+					"angular2-switcher.revealIfOpen": {
+						"type": "boolean",
+						"default": false,
+						"description": "Open editor if file is already open"
 					}
 				}
 			}

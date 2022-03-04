@@ -3,12 +3,29 @@ import { fileIs, getFileNameWithoutExtension } from "./common";
 import { TemplateDefinitionProvider } from "./template-definition-provider";
 
 let previous = "";
-let openSideBySide = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("openSideBySide")!;
-let reuseView = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("reuseView")!;
-let styleFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("styleFormats")!;
-let templateFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("templateFormats")!;
+
+let openSideBySide: boolean;
+let revealIfOpen: boolean;
+let styleFormats: string[];
+let templateFormats: string[];
+
+function updateConfig()
+{
+  openSideBySide = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("openSideBySide")!;
+  revealIfOpen = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("revealIfOpen")!;
+  styleFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("styleFormats")!;
+  templateFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("templateFormats")!;  
+}
+
+updateConfig();
 
 export function activate(context: vscode.ExtensionContext) {
+  
+    let updateConfigSub = vscode.workspace.onDidChangeConfiguration(() => {
+      updateConfig();
+    });
+    context.subscriptions.push(updateConfigSub);
+    
     let switchTemplateCommand = vscode.commands.registerCommand('extension.switchTemplate', switchTemplate);
     context.subscriptions.push(switchTemplateCommand);
 
@@ -155,7 +172,7 @@ async function openCorrespondingFile(fileNameWithoutExtension: string, ...format
     for (let index = 0; index < formats.length; index++) {
         const fileName = `${fileNameWithoutExtension}${formats[index]}`;
         const textEditor = vscode.window.visibleTextEditors.find(textDocument => textDocument.document.fileName === fileName);
-        if(reuseView && !!textEditor) {
+        if(revealIfOpen && !!textEditor) {
           await vscode.window.showTextDocument(textEditor.document, textEditor.viewColumn);
           break;
         }
