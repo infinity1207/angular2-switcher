@@ -7,6 +7,7 @@ let openSideBySide = vscode.workspace.getConfiguration("angular2-switcher").get<
 let reuseView = vscode.workspace.getConfiguration("angular2-switcher").get<boolean>("reuseView")!;
 let styleFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("styleFormats")!;
 let templateFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("templateFormats")!;
+let specFormats = vscode.workspace.getConfiguration("angular2-switcher").get<string[]>("specFormats")!;
 
 export function activate(context: vscode.ExtensionContext) {
     let switchTemplateCommand = vscode.commands.registerCommand('extension.switchTemplate', switchTemplate);
@@ -112,8 +113,8 @@ async function switchSpec() {
     let currentFile = editor.document.fileName;
     let fileNameWithoutExtension = getFileNameWithoutExtension(currentFile);
 
-    if (fileIsTs(currentFile) || fileIsStyle(currentFile) || fileIsTemplate(currentFile)) {
-        openCorrespondingFile(fileNameWithoutExtension, ".spec.ts");
+    if (fileIsTs(currentFile) || fileIsStyle(currentFile) || fileIsTemplate(currentFile)) {        
+        openCorrespondingFile(fileNameWithoutExtension, ...specFormats);        
     }
     else if (fileIsSpec(currentFile)) {
         if (previous && previous !== currentFile) {
@@ -182,5 +183,5 @@ function fileIsTs(path: string) {
 }
 
 function fileIsSpec(path: string) {
-    return fileIs(path, ".spec.ts");
+    return fileIs(path, ...specFormats);
 }

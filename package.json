@@ -102,6 +102,19 @@
 						"description": "The order of angular2-switcher find corresponding template file."
 					}
 				}
+			},
+			{
+				"title": "Spec formats",
+				"properties": {
+					"angular2-switcher.specFormats": {
+						"type": "array",
+						"default": [
+							".spec.ts",
+							".stories.ts"
+						],
+						"description": "The order of angular2-switcher find corresponding spec file."
+					}
+				}
 			}
 		]
 	},
