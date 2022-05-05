@@ -113,8 +113,8 @@ async function switchSpec() {
     let currentFile = editor.document.fileName;
     let fileNameWithoutExtension = getFileNameWithoutExtension(currentFile);
 
-    if (fileIsTs(currentFile) || fileIsStyle(currentFile) || fileIsTemplate(currentFile)) {        
-        openCorrespondingFile(fileNameWithoutExtension, ...specFormats);        
+    if (fileIsTs(currentFile) || fileIsStyle(currentFile) || fileIsTemplate(currentFile)) {
+        openCorrespondingFile(fileNameWithoutExtension, ...specFormats);
     }
     else if (fileIsSpec(currentFile)) {
         if (previous && previous !== currentFile) {
