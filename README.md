@@ -34,6 +34,11 @@ Easily navigate to `typescript(.ts)`|`template(.html)`|`style(.scss/.sass/.less/
   "angular2-switcher.templateFormats": [".html"]
 ```
 
+* The order of angular2-switcher find corresponding spec file  (`[".spec.ts", ".stories.ts"]` by default)
+```json
+  "angular2-switcher.styleFormats": [".spec.ts", ".stories.ts"]
+```
+
 ## Source
 
 [GitHub](https://github.com/infinity1207/angular2-switcher)
